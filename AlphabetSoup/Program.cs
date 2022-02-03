@@ -11,11 +11,10 @@ namespace AlphabetDemo
             Console.WriteLine(backwards);
 
             Console.Write("How many letters would you like to skip:  ");
-            Console.ReadLine();
+            var userInput = Console.ReadLine();
 
-            string userInput = Console.ReadLine();
             int numberToSkip = int.Parse (userInput);
-            string skip = CreateAlphabetSkip(numberToSkip);
+            string? skip = CreateAlphabetSkip(numberToSkip);
             Console.WriteLine(skip);
         }
         static string CreateAlphabet()
