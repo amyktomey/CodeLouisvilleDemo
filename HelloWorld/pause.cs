@@ -1,5 +1,5 @@
-﻿namespace HelloWorld
-{
+﻿namespace Pause
+{ 
     internal class pause
     {
     }
