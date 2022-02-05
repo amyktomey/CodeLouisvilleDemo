@@ -22,6 +22,7 @@
             Console.WriteLine("Please type 1, 2 or n 3 to naviagte");
             string MyOptions;
             MyOptions = Console.ReadLine();
+
                 switch (MyOptions)
                
                 {
@@ -36,10 +37,7 @@
                 case "3":
                     Exit();
                     break;
-                }
-;
-            
- 
+                }          
 
             MainMenu();
         }
@@ -54,9 +52,12 @@
             int val1 = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Did you say that your age is:  {0} ", val1);
-            Console.WriteLine("Congrats! You are {0} years away from retirement (65)!!!", 65 - val1);
-
-
+            if (val1 < 65)
+            {
+                Console.WriteLine("Congrats! You are {0} years away from retirement (65)!!!", 65 - val1);
+            }
+            else
+                Console.WriteLine("You have already reached retirement age.");
             
             Console.ReadLine();
         }
