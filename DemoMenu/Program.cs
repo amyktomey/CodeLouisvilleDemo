@@ -14,8 +14,8 @@
         static void MainMenu()
         {
             Console.Clear();
-            Console.WriteLine("Welcome to my app!");
-            Console.WriteLine("");
+            Console.WriteLine("Welcome to my app!\n");
+           // Console.WriteLine("");
             Console.WriteLine("Option 1: Introduction");
             Console.WriteLine("Option 2: Calculations");
             Console.WriteLine("Option 3: Exit");
