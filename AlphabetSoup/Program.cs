@@ -27,17 +27,19 @@ namespace AlphabetDemo
             {
                 case "1":
                     CreateAlphabet();
+                    Console.WriteLine(CreateAlphabet());
                     break;
                 case "2":
                     CreateAlphabetBackwards();
+                    Console.WriteLine(CreateAlphabetBackwards());
                     break;
                 case "3":
                     CreateAlphabetSkip();
+                    Console.WriteLine(CreateAlphabetSkip());
                     break;
                 case "4":
                     Exit();
                     break;
-
             }
 
             MainMenu();
@@ -63,7 +65,7 @@ namespace AlphabetDemo
             {
                 alphabet += alpha;
             }
-            Console.WriteLine (CreateAlphabet());
+            return (CreateAlphabet());
         }
         static string CreateAlphabetBackwards()
         {
@@ -72,27 +74,27 @@ namespace AlphabetDemo
             {
                 backwards += alpha;
             }
-            Console.WriteLine(CreateAlphabetBackwards());
+            return (CreateAlphabetBackwards());
         }
         static string CreateAlphabetSkip()
             {
             Console.Write("How many letters would you like to skip:  ");
             var userInput = Console.ReadLine();
 
-            int numberToSkip = int.Parse(userInput);
-            // string? skip = CreateAlphabetSkip(numberToSkip);
-            //Console.WriteLine(skip);
+           int input = int.Parse(userInput);
+           //string? skip = CreateAlphabetSkip(numberToSkip);
+           // return (skip);
         
-            string alphabetSkipped = "";
+            string alphabetSkip = "";
             for (char alpha = 'A'; alpha <= 'Z';)
             {   
-                alphabetSkipped += alpha;
-                for (int i = 0; i < numberToSkip; i++)
+                alphabetSkip += alpha;
+                for (int i = 0; i < input; i++)
                 {
                     alpha++;
                 }
             }
-            Console.WriteLine(CreateAlphabetSkip());
+            return (CreateAlphabetSkip());
        }
         static void Exit()
         {
