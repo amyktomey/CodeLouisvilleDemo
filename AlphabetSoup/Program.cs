@@ -26,38 +26,42 @@ namespace AlphabetDemo
 
                         {
                                 case "1":
-                                        CreateAlphabet();
-                                        Console.WriteLine(CreateAlphabet());
+                                        string alpahabet = CreateAlphabet();
+                                        Console.WriteLine(alpahabet);
                                         break;
-                                case "2":
-                                        CreateAlphabetBackwards();
-                                        Console.WriteLine(CreateAlphabetBackwards());
+                                case "2":                                       
+                                         Console.WriteLine(CreateAlphabetBackwards());
                                         break;
                                 case "3":
-                                        CreateAlphabetSkip();
                                         Console.WriteLine(CreateAlphabetSkip());
                                         break;
                                 case "4":
                                         Exit();
                                         break;
+                                default:
+                                        Console.WriteLine("Invalid menu Selection!");
+                                        break;
                         }
-
+                Console.ReadKey();
                     MainMenu();
                 }
 
-                //{
-                //    Console.WriteLine(CreateAlphabet());
+                static int Prompt4Integer(string prompt)
+                {
+                        int value;
+                        bool wasANumber;
+                        do
+                        {
+                                Console.Write(prompt);
 
-                //    string backwards = CreateAlphabetBackwards();
-                //    Console.WriteLine(backwards);
+                                string menuInput = Console.ReadLine();
+                                wasANumber = int.TryParse(menuInput, out value);
 
-                //    Console.Write("How many letters would you like to skip:  ");
-                //    var userInput = Console.ReadLine();
+                        } while (wasANumber);
 
-                //    int numberToSkip = int.Parse (userInput);
-                //    string? skip = CreateAlphabetSkip(numberToSkip);
-                //    Console.WriteLine(skip);
-                //}
+                         return value;
+                 }
+
                 static string CreateAlphabet()
                 {
                         string alphabet = "";
@@ -65,7 +69,7 @@ namespace AlphabetDemo
                         {
                                 alphabet += alpha;
                         }
-                        return (CreateAlphabet());
+                        return alphabet;
                 }
                 static string CreateAlphabetBackwards()
                 {
@@ -74,15 +78,12 @@ namespace AlphabetDemo
                         {
                                 backwards += alpha;
                         }
-                        return (CreateAlphabetBackwards());
+                return backwards;
                 }
                 static string CreateAlphabetSkip()
                 {
                         Console.Write("How many letters would you like to skip:  ");
                         var userInput = Console.ReadLine();
-
-                    //string? skip = CreateAlphabetSkip(numberToSkip);
-                    // return (skip);
 
                         string alphabetSkip = "";
                         for (char alpha = 'A'; alpha <= 'Z';)
@@ -93,7 +94,7 @@ namespace AlphabetDemo
                                     alpha++;
                                 }
                         }
-                        return (CreateAlphabetSkip());
+                        return alphabetSkip;
                 }
                 static void Exit()
                 {
